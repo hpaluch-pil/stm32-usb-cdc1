@@ -98,12 +98,12 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  HAL_GPIO_WritePin(GPIOB, LD2_Pin, GPIO_PIN_SET);
+	  HAL_Delay(100);
+	  HAL_GPIO_WritePin(GPIOB, LD2_Pin, GPIO_PIN_RESET);
+	  HAL_Delay(500);
     /* USER CODE END WHILE */
-	// blink blue LED LD2 - to see that CPU works...
-	HAL_GPIO_WritePin(GPIOB, LD2_Pin, GPIO_PIN_SET);
-	HAL_Delay(100);
-	HAL_GPIO_WritePin(GPIOB, LD2_Pin, GPIO_PIN_RESET);
-	HAL_Delay(100);
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -132,7 +132,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLM = 8;
   RCC_OscInitStruct.PLL.PLLN = 432;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
-  RCC_OscInitStruct.PLL.PLLQ = 2;
+  RCC_OscInitStruct.PLL.PLLQ = 9;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -157,13 +157,7 @@ void SystemClock_Config(void)
     Error_Handler();
   }
   PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_CLK48;
-  PeriphClkInitStruct.PLLSAI.PLLSAIN = 384;
-  PeriphClkInitStruct.PLLSAI.PLLSAIR = 2;
-  PeriphClkInitStruct.PLLSAI.PLLSAIQ = 2;
-  PeriphClkInitStruct.PLLSAI.PLLSAIP = RCC_PLLSAIP_DIV8;
-  PeriphClkInitStruct.PLLSAIDivQ = 1;
-  PeriphClkInitStruct.PLLSAIDivR = RCC_PLLSAIDIVR_2;
-  PeriphClkInitStruct.Clk48ClockSelection = RCC_CLK48SOURCE_PLLSAIP;
+  PeriphClkInitStruct.Clk48ClockSelection = RCC_CLK48SOURCE_PLL;
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
   {
     Error_Handler();
