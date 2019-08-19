@@ -1,0 +1,8 @@
+# vim backup files
+*.swp
+*~
+
+# Compiled files
+Debug/
+Release/
+
