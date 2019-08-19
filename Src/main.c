@@ -157,7 +157,13 @@ void SystemClock_Config(void)
     Error_Handler();
   }
   PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_CLK48;
-  PeriphClkInitStruct.Clk48ClockSelection = RCC_CLK48SOURCE_PLL;
+  PeriphClkInitStruct.PLLSAI.PLLSAIN = 384;
+  PeriphClkInitStruct.PLLSAI.PLLSAIR = 2;
+  PeriphClkInitStruct.PLLSAI.PLLSAIQ = 2;
+  PeriphClkInitStruct.PLLSAI.PLLSAIP = RCC_PLLSAIP_DIV8;
+  PeriphClkInitStruct.PLLSAIDivQ = 1;
+  PeriphClkInitStruct.PLLSAIDivR = RCC_PLLSAIDIVR_2;
+  PeriphClkInitStruct.Clk48ClockSelection = RCC_CLK48SOURCE_PLLSAIP;
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
   {
     Error_Handler();
