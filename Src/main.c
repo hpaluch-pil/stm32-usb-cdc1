@@ -99,7 +99,11 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+	// blink blue LED LD2 - to see that CPU works...
+	HAL_GPIO_WritePin(GPIOB, LD2_Pin, GPIO_PIN_SET);
+	HAL_Delay(100);
+	HAL_GPIO_WritePin(GPIOB, LD2_Pin, GPIO_PIN_RESET);
+	HAL_Delay(100);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -269,6 +273,11 @@ void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
   /* User can add his own implementation to report the HAL error return state */
+  // RED LED LD3 on fatal error.
+  HAL_GPIO_WritePin(GPIOB, LD3_Pin, GPIO_PIN_SET);
+  while(1){
+	  // loop forever (halt)
+  }
 
   /* USER CODE END Error_Handler_Debug */
 }
