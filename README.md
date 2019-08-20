@@ -38,7 +38,7 @@ NOTE: There are two Virtual COM ports:
    (Notice "missing" `STLink` word). This port is
    used in this project.
 
-   Please also notice different "idProduct" ("idVendor" is same as above): \\
+   Please also notice different "idProduct" ("idVendor" is same as above):
    `idVendor=0483, idProduct=5740`
 
 
