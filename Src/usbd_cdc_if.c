@@ -263,8 +263,21 @@ static int8_t CDC_Control_FS(uint8_t cmd, uint8_t* pbuf, uint16_t length)
 static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
 {
   /* USER CODE BEGIN 6 */
+  uint32_t i;
   USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
   USBD_CDC_ReceivePacket(&hUsbDeviceFS);
+  for(i=0;i<*Len;i++){
+	  char c = Buf[i];
+	  if ( c == '1'){
+		  // green LED LD1: ON
+		  HAL_GPIO_WritePin(GPIOB, LD1_Pin, GPIO_PIN_SET);
+	  } else if ( c == '0'){
+		  // green LED LD1: OFF
+		  HAL_GPIO_WritePin(GPIOB, LD1_Pin, GPIO_PIN_RESET);
+	  } else {
+		  // silently ignore unsupported characters
+	  }
+  }
   return (USBD_OK);
   /* USER CODE END 6 */
 }
