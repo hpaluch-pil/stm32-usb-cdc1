@@ -4,7 +4,7 @@ It finally connects to Host and provides Virtual COM port (for `User USB` connec
 
 * red LED D3 lights on fatal error
 * blue LED D2 is blinking (to signal that CPU is running)
-* Thi CDC Transmit/Receive are currently No-operation (planned
+* The CDC Transmit/Receive are currently No-operation (planned
   control of green LED D1 in near future).
 
 
