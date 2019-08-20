@@ -22,7 +22,7 @@ NOTE: There are two Virtual COM ports:
 
    Please notice `idVendor=0483, idProduct=374b`
 
-   This port is connected to `USART1` of MCU. If you want to use this serial port
+   This port is connected to `USART3` of MCU. If you want to use this serial port
    you can look into example in:
 
    ```
