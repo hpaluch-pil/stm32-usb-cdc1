@@ -34,8 +34,9 @@ NOTE: There are two Virtual COM ports:
 
 1. `CN13`-`User USB` - it is USB directly attached to MCU.
    It is visible under Windows 
-   as `STMicroelectronics Virtual COM Port (COMx)`. This port is
-   used in this project. (Notice "missing" `STLink` word).
+   as `STMicroelectronics Virtual COM Port (COMx)`.
+   (Notice "missing" `STLink` word). This port is
+   used in this project.
 
    Please also notice different "idProduct" ("idVendor" is same as above): \\
    `idVendor=0483, idProduct=5740`
