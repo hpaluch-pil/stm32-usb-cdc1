@@ -98,4 +98,16 @@ NOTE: To avoid problems please use this directory structure:
 * `/home/ansible/STM32Cube/Repository/STM32Cube_FW_F7_V1.15.0/` - path
   of firmware package `STM32Cube_FW_F7_V1.15.0`
 
+# NOTES
+
+If you plan to connect `CN13`-`User USB` to Windows 7 or Windows 8.x 
+you may need to
+install [STM32 Virtual COM Port Driver](https://www.st.com/en/development-tools/stsw-stm32102.html).
+
+Important note: The Nucleo board MUST be powered on (for example
+connected to PC using `CN1`-`USB PWR`) - before connecting
+`CN13`-`User USB` to Host. Doing otherwise may damage Nucleo board!
+
+
+
 --hp
